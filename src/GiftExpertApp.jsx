@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react"
 
-import { AddCategory } from "./components/AddCaregoria"
-import { GifGrid } from "./components/GifGrid"
+import { AddCategory,GifGrid } from "./components/"
 
 export const GiftExpertApp = () => {
 

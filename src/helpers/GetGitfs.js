@@ -5,7 +5,7 @@ const getGifts = async  (category) => {
         redirect: "follow"
       };
       
-      let respuesta = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=FZYhoelBMUN8w9eusq3sD6RFqhGj3igt&q=${category}&limit=10`, requestOptions)
+      let respuesta = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=FZYhoelBMUN8w9eusq3sD6RFqhGj3igt&q=${category}&limit=2`, requestOptions)
       const {data } = await respuesta.json()
       
 

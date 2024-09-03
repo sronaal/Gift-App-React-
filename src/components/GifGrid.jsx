@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { useState, useEffect } from "react"
+
 import GifItem from "./GifItem"
-import getGifts from "../helpers/GetGitfs"
 import useFetchGitf from "../hooks/useFetchGitf"
 
 
@@ -35,7 +34,15 @@ export const GifGrid = ({ category }) => {
     return (
 
         <>
+
+
+            {
+                isLoading && ( <h1>Cargando</h1> )
+            }
+
+
             <h3>{category}</h3>
+
             <div className="card-grid">
                 {
                     images.map((image) => (
