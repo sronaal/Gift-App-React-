@@ -1,12 +1,19 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react"
+import GifItem from "./GifItem"
 import getGifts from "../helpers/GetGitfs"
+import useFetchGitf from "../hooks/useFetchGitf"
 
 
-export const GifGrid = ({ category, key }) => {
+export const GifGrid = ({ category }) => {
 
-    const [images, setImages] = useState([])
+
+    const { images, isLoading } = useFetchGitf(category);
+
+    /**
+     * 
+     * const [images, setImages] = useState([])
 
 
     const getImages = async () => {
@@ -20,6 +27,7 @@ export const GifGrid = ({ category, key }) => {
         getImages()
     }, [])
 
+     */
 
 
 
@@ -28,17 +36,19 @@ export const GifGrid = ({ category, key }) => {
 
         <>
             <h3>{category}</h3>
-            <ol>
+            <div className="card-grid">
                 {
-                    images.map(({id,title,url}) => (
+                    images.map((image) => (
 
-                    
-                        <li key={ id }>{ title }</li>
-                        
+
+                        <GifItem
+                            key={image.id}
+                            {...image}
+                        />
 
                     ))
                 }
-            </ol>
+            </div>
         </>
     )
 }
